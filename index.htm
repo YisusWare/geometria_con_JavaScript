@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="index.js"></script>
+    <header>
+        <h1>Calculando figuras geometricas en JavaScript</h1>
+        <img class="logo-JS"src="https://d2vqpl3tx84ay5.cloudfront.net/500x/tumblr_lsus01g1ik1qies3uo1_400.png" alt="logo JavaScript">
+    </header>
+<main>
+    <section class="taller1"> 
+
+        <h2>Taller 1: Medidas de figuras geometricas</h2>
+
+        <p class="introduccion">
+            Al momento de trabajar con figuras geométricas, es esencial para un ingeniero conocer las medidas de estas, casi todo espacio puede ser descrito utilizando estas y conocer sus medidas y ser capaces de computarizar cálculos geométricos debería ser algo sencillo para cualquier ingeniero de software. Con esto en mente mostraré a continuación la manera de calcular tanto el área como el perímetro de algunas figuras geométricas, así como los programas con los cuales puedes calcular estas medidas con JavaScript (aclarando que una vez desglosado el algoritmo para calcular dichas medidas lo puedes hacer en cualquier lenguaje de programación).
+        </p>
+
+        <div class="medidasCuadrado">
+
+            
+            <div class="explicacion-cuadrado">
+                <h2 class="titulo-cuadrado">
+                    Calculando las medidas de un cuadrado
+                </h2>
+
+                <p>
+                    Calcular el perímetro de un cuadrado debe ser de las cosas más sencillas de hacer, el perimetro de un cuadrado es dado por la suma de sus lados, o lo que es lo mismo, la multiplicación de uno de sus lados por cuatro.
+                </p>
+
+                <img src="./assets/formulaPerimetroCuadrado.png" alt="Formula_perimetro_cuadrado">
+
+                <p>
+                    En el caso del área, podemos calcularla al elevar al cuadrado la medida de uno de los lados del cuadrado, es decir, al multiplicar lado por lado.
+                </p>
+                <img src="./assets/formulaAreaCuadrado.png" alt="Formula_area_cuadrado">
+
+                <div class="codigo_cuadrado">
+
+                    <p>
+                        Podemos hacer un programa que calcule las medidas de cualquier cuadrado a partir de uno de sus lados utilizando el siguiente código.
+                    </p>
+
+                    <pre>
+ 
+                    
+                    
+    function calcularPerimetroCuadrado(lado){
+        return lado * 4
+    }
+                    
+    function calcularAreaCuadrado(lado) {
+        return Math.pow(lado,2)
+    }
+                                     
+                    </pre>
+                </div>
+
+
+            </div>
+
+            
+
+            <div class="cuadradoCalculadora">
+
+                <h2 class="titulo-calculadora-cuadrado">Calculadora de area y perimetro de un cuadrado</h2>
+                <form action="">
+                    <label for="cuadrado">Ingrese la medida del lado:</label>
+                    <input id="cuadrado"type="number">
+                    <button class="calcular-cuadrado" type="button" onClick="calcularMedidasCuadrado()">Calcular</button>
+
+                    <p id="cuadrado_resultados" class="cuadrado_resultados"></p>
+                </form>
+            </div>
+
+            
+        </div>
+        <div class="medidasTriangulo">
+
+        </div>
+        <div class="medidasCirculo">
+
+        </div>
+    </section>    
+</main>
+    
+</body>
+</html>

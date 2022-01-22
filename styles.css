@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --javascript-black: #2f2e2d;
+    --paragraphbox-gray: rgb(234, 234, 243);
+    --code-background: #f4f4f4;
+    
+    --javascript-yellow: #f7df1e;
+    --sm: 1.2rem;
+    --md: 1.4rem;
+    --lg: 1.8rem;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    background-color: var(--javascript-black);
+
+    font-weight: 300;
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1{
+    margin: 0 10px
+}
+header .logo-JS{
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    border-radius: 4px;
+}
+
+.taller1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px auto 0 auto;
+    padding: 20px;
+    background-color: var(--paragraphbox-gray);
+    width: 95%;
+
+}
+
+.taller1 .introduccion{
+    width: 95%;
+    margin: 20px auto;
+    font-size: 1.2rem;
+}
+
+.medidasCuadrado{
+    border: 1px solid var(--javascript-black);
+    width: 95%;
+    padding: 14px;
+    
+    
+}
+
+.cuadradoCalculadora{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    height: 200px;
+    max-width: 400px;
+    padding: 30px;
+    margin: 14px auto;
+    background-color:var(--javascript-black);
+    color: white;
+    border-radius: 4px;;
+}
+
+.medidasCuadrado .cuadradoCalculadora form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.medidasCuadrado .cuadradoCalculadora form .calcular-cuadrado{
+    margin-top: 10px;
+    width:150px;
+    height: 30px;
+    border: 2px solid var(--javascript-black);
+    background-color: var(--javascript-yellow);
+    border-radius: 2px;
+    font-weight: 700;
+}
+
+.medidasCuadrado .cuadradoCalculadora form input{
+    width: 150px;
+}
+
+.medidasCuadrado .cuadradoCalculadora form label{
+    font-size: var(--sm);
+}
+
+
+
+.medidasCuadrado .explicacion-cuadrado p{
+    font-size: var(--sm);
+    margin: 10px 0;
+}
+
+.codigo_cuadrado pre{
+    background-color:var(--code-background) ;
+    
+    width: 300px;
+}
+
+.cuadrado_resultados{
+    margin: 10px;
+    font-size: 1.2rem;
+    align-self: flex-start;
+}
