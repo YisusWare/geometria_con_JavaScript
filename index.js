@@ -10,24 +10,17 @@ function calcularAreaCuadrado(lado){
 }
 
 
-let triangulo = {
-    lado1: 3,
-    lado2: 4,
-    lado3: 5,
-    
-}
-
 function calcularPerimetroTriangulo(a,b,c){
 return parseFloat(a) + parseFloat(b) + parseFloat(c)
 }
 
-function calcularAngulo(a,b,c){
-    return Math.acos(((Math.pow(c,2) + Math.pow(a,2) - Math.pow(b,2)) / (2 * c * a)))
-}
 
 function calcularAreaTriangulo(a,b,c){
-    return ((c * a * Math.sin(calcularAngulo(a,b,c))) / 2 )
+    let s= (calcularPerimetroTriangulo(a,b,c)/2)
+    
+    return Math.sqrt(s * (s-a) * (s-b) * (s-c))
 }
+
 
 let radioCirculo = 5
 const PI = Math.PI
@@ -49,4 +42,20 @@ function calcularMedidasCuadrado(){
    
    
 
+}
+
+function calcularMedidasTriangulo(){
+    let lado1 = document.getElementById("lado1").value
+    let lado2 = document.getElementById("lado2").value
+    let lado3 = document.getElementById("lado3").value
+    let resultado_triangulo = document.getElementById("triangulo_resultados")
+    
+    if( !isNaN(calcularAreaTriangulo(lado1,lado2,lado3))){
+        resultado_triangulo.innerText = "Perimetro: " + calcularPerimetroTriangulo(lado1,lado2,lado3) +
+                                    "\nArea: " + calcularAreaTriangulo(lado1,lado2,lado3).toFixed(4)
+    }
+    else{
+        resultado_triangulo.innerText = "Triangulo invalido"
+    }
+     
 }

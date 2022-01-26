@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Geometria con JavaScript</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,11 +25,11 @@
             Al momento de trabajar con figuras geométricas, es esencial para un ingeniero conocer las medidas de estas, casi todo espacio puede ser descrito utilizando estas y conocer sus medidas y ser capaces de computarizar cálculos geométricos debería ser algo sencillo para cualquier ingeniero de software. Con esto en mente mostraré a continuación la manera de calcular tanto el área como el perímetro de algunas figuras geométricas, así como los programas con los cuales puedes calcular estas medidas con JavaScript (aclarando que una vez desglosado el algoritmo para calcular dichas medidas lo puedes hacer en cualquier lenguaje de programación).
         </p>
 
-        <div class="medidasCuadrado">
+        <div class="medidas_figura">
 
             
-            <div class="explicacion-cuadrado">
-                <h2 class="titulo-cuadrado">
+            <div class="explicacion-figura">
+                <h2>
                     Calculando las medidas de un cuadrado
                 </h2>
 
@@ -44,7 +44,7 @@
                 </p>
                 <img src="./assets/formulaAreaCuadrado.png" alt="Formula_area_cuadrado">
 
-                <div class="codigo_cuadrado">
+                <div class="codigo_figura">
 
                     <p>
                         Podemos hacer un programa que calcule las medidas de cualquier cuadrado a partir de uno de sus lados utilizando el siguiente código.
@@ -54,13 +54,13 @@
  
                     
                     
-    function calcularPerimetroCuadrado(lado){
+   function calcularPerimetroCuadrado(lado){
         return lado * 4
-    }
+   }
                     
-    function calcularAreaCuadrado(lado) {
+   function calcularAreaCuadrado(lado) {
         return Math.pow(lado,2)
-    }
+   }
                                      
                     </pre>
                 </div>
@@ -70,27 +70,102 @@
 
             
 
-            <div class="cuadradoCalculadora">
+            <div class="calculadora_figura">
 
-                <h2 class="titulo-calculadora-cuadrado">Calculadora de area y perimetro de un cuadrado</h2>
+                <h2>Calculadora de area y perimetro de un cuadrado</h2>
                 <form action="">
                     <label for="cuadrado">Ingrese la medida del lado:</label>
                     <input id="cuadrado"type="number">
-                    <button class="calcular-cuadrado" type="button" onClick="calcularMedidasCuadrado()">Calcular</button>
+                    <button class="calcular-cuadrado main_button"  type="button" onClick="calcularMedidasCuadrado()">Calcular</button>
 
-                    <p id="cuadrado_resultados" class="cuadrado_resultados"></p>
+                    <p id="cuadrado_resultados" class="figura_resultados"></p>
                 </form>
             </div>
 
             
         </div>
-        <div class="medidasTriangulo">
+        
+
+        <div class="medidas_figura">
+
+            <div class="explicacion-figura">
+                <h2>
+                    Calculando las medidas de un triangulo
+                </h2>
+
+                <p>
+                    Para calcular las medidas de un triangulo contamos con dos formulas generales, en el caso del perímetro, simplemente tenemos que sumar cada uno de los lados del triángulo,  así como hicimos con el cuadrado.
+                </p>
+
+                <img src="./assets/formulaPerimetroTriangulo.png" alt="formula_perimetro_triangulo">
+
+                <p>
+                    Por otro lado, el área la calculamos multiplicando la base por la altura y dividiendo el resultado entre 2.
+                </p>
+
+                <img src="./assets/formulaAreaTriangulo.png" alt="">
+                <p>
+                    Sin embargo, nos encontramos con un inconveniente ya que nosotros deseamos calcular el área a partir de los lados del triángulo, así que ¿Cómo podemos hacer esto? 
+                </p>
+
+                <h2>
+                    Calculando el area de un triangulo a partir de sus tres lados
+                </h2>
+
+                <p>
+                    Podemos realizar el cálculo del área mediante la fórmula de Herón, si deseas saber un poco más de este metodo a continuación puedes encontrar un enlace a un video de Profe Alex donde habla del tema.
+                    <a href="https://www.youtube.com/watch?v=QtHQFAbgdPU" class="link-video">Explicación de la fórmula de Herón</a>
+                </p>
+
+                <img class="formula_Heron"src="./assets/formulaHeron.png" alt="formula_Heron">
+                <p>
+                    donde:
+                </p>
+                <img src="./assets/s_formula.png" alt="formula_para_s">
+                
+                <p>
+                    El código para calcular dichas medidas se muestra a continuación.
+                </p>
+                <div class="codigo_figura">
+
+                    <pre>
+function calcularPerimetroTriangulo(a,b,c){
+    return parseFloat(a) + parseFloat(b) + parseFloat(c)
+}
+
+
+function calcularAreaTriangulo(a,b,c){
+    let s= (calcularPerimetroTriangulo(a,b,c)/2)
+    
+    return Math.sqrt(s * (s-a) * (s-b) * (s-c))
+}                        
+                    </pre>
+                </div>
+            </div>
+            <div class="calculadora_figura">
+                <h2>
+                    Calculadora de area y perimetro de un triangulo
+                </h2>
+
+                <form action="">
+
+                    <div class="input_container"><label for="lado1">lado 1:</label>
+                        <input id="lado1" type="number" ></div>
+                    <div class="input_container"><label for="lado2">lado 2:</label>
+                        <input id="lado2" type="number" ></div>
+                    <div class="input_container"><label for="lado3">lado 3:</label>
+                        <input id="lado3" type="number" ></div>
+                    
+                    <button class="calcular-cuadrado main_button" type="button" onclick="calcularMedidasTriangulo()">Calcular</button>    
+
+                    <p id="triangulo_resultados" class="figura_resultados"></p>
+                </form>
+                
+            </div>
+            
 
         </div>
-        <div class="medidasCirculo">
-
-        </div>
-    </section>    
+    </section>  
 </main>
     
 </body>

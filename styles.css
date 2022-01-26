@@ -56,7 +56,7 @@ header .logo-JS{
     font-size: 1.2rem;
 }
 
-.medidasCuadrado{
+.medidas_figura{
     border: 1px solid var(--javascript-black);
     width: 95%;
     padding: 14px;
@@ -64,12 +64,12 @@ header .logo-JS{
     
 }
 
-.cuadradoCalculadora{
+.calculadora_figura{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 95%;
-    height: 200px;
+    min-height: 200px;
     max-width: 400px;
     padding: 30px;
     margin: 14px auto;
@@ -78,15 +78,22 @@ header .logo-JS{
     border-radius: 4px;;
 }
 
-.medidasCuadrado .cuadradoCalculadora form{
+.calculadora_figura form .input_container{
+    margin-top: 10px;
+}
+
+.medidas_figura .calculadora_figura form{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
 }
 
-.medidasCuadrado .cuadradoCalculadora form .calcular-cuadrado{
-    margin-top: 10px;
+.medidas_figura .calculadora_figura form .calcular-cuadrado{
+    margin-top: 10px;  
+}
+
+.main_button{
     width:150px;
     height: 30px;
     border: 2px solid var(--javascript-black);
@@ -95,28 +102,39 @@ header .logo-JS{
     font-weight: 700;
 }
 
-.medidasCuadrado .cuadradoCalculadora form input{
+.medidas_figura .calculadora_figura form input{
     width: 150px;
 }
 
-.medidasCuadrado .cuadradoCalculadora form label{
+.medidas_figura .calculadora_figura form label{
     font-size: var(--sm);
 }
 
 
 
-.medidasCuadrado .explicacion-cuadrado p{
+.medidas_figura .explicacion-figura p{
     font-size: var(--sm);
     margin: 10px 0;
 }
 
-.codigo_cuadrado pre{
-    background-color:var(--code-background) ;
+.medidas_figura .explicacion-figura p .link-video{
+    display: block;
     
-    width: 300px;
+    text-decoration: none;
 }
 
-.cuadrado_resultados{
+.medidas_figura .explicacion-figura .formula_Heron{
+    width: 100%;
+    max-width: 300px;
+}
+.codigo_figura pre{
+    background-color:var(--code-background) ;
+    font-size: 12;
+    width: 95%;
+    max-width: 300px;
+}
+
+.figura_resultados{
     margin: 10px;
     font-size: 1.2rem;
     align-self: flex-start;
