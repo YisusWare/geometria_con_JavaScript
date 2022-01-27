@@ -17,12 +17,11 @@ return parseFloat(a) + parseFloat(b) + parseFloat(c)
 
 function calcularAreaTriangulo(a,b,c){
     let s= (calcularPerimetroTriangulo(a,b,c)/2)
-    
+
     return Math.sqrt(s * (s-a) * (s-b) * (s-c))
 }
 
 
-let radioCirculo = 5
 const PI = Math.PI
 
 function calcularPerimetroCirculo(radio){
@@ -58,4 +57,11 @@ function calcularMedidasTriangulo(){
         resultado_triangulo.innerText = "Triangulo invalido"
     }
      
+}
+
+function calcularMedidasCirculo(){
+    let radio = document.getElementById("radio").value
+    let resultado_circulo = document.getElementById("circulo_resultados")
+    resultado_circulo.innerText = "Perimetro: " + calcularPerimetroCirculo(radio).toFixed(4) + 
+    "\nArea: " + calcularAreaCirculo(radio).toFixed(4)
 }

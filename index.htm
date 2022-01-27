@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En este pequeño articulo te explicaré como calcular medidas de figuras geometricas usando Javascript"> 
+    <meta name="robots" content="index,follow">
     <title>Geometria con JavaScript</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,14 +132,16 @@
 
                     <pre>
 function calcularPerimetroTriangulo(a,b,c){
-    return parseFloat(a) + parseFloat(b) + parseFloat(c)
+    return parseFloat(a) + 
+           parseFloat(b) + 
+           parseFloat(c)
 }
 
 
 function calcularAreaTriangulo(a,b,c){
-    let s= (calcularPerimetroTriangulo(a,b,c)/2)
+  let s= (calcularPerimetroTriangulo(a,b,c)/2)
     
-    return Math.sqrt(s * (s-a) * (s-b) * (s-c))
+  return Math.sqrt(s * (s-a) * (s-b) * (s-c))
 }                        
                     </pre>
                 </div>
@@ -165,6 +169,60 @@ function calcularAreaTriangulo(a,b,c){
             
 
         </div>
+
+        <div class="medidas_figura">
+            <div class="explicacion-figura">
+                <h2>
+                    Calculando las medidas de un circulo
+                </h2>
+
+                <p>
+                    Esta es de las fórmulas que más hemos oído repetir a nuestros profesores de matemáticas, para calcular el perímetro de un circulo multiplicamos su radio por dos veces pi.
+                </p>
+
+                <img src="./assets/formulaPerimetroCirculo.png" alt="formula_perimetro_circulo">
+                <p>
+                    En el caso del área, esta se calcula elevando el radio al cuadrado y multiplicándolo por pi.
+                </p>
+
+                <img src="./assets/formulaAreaCirculo.png" alt="Formula_area_circulo">
+
+                <p>
+                    el código que calcula estas figuras es el siguiente
+                </p>
+
+                
+                <div class="codigo_figura">
+                <pre>
+const PI = Math.PI
+
+function calcularPerimetroCirculo(radio){
+    return 2 * PI * radio
+}
+
+function calcularAreaCirculo(radio){
+    return PI * Math.pow(radio,2)
+}
+                </pre>
+                </div>
+
+                <p>
+                    cabe resaltar que en este caso estamos obteniendo pi desde el atributo PI que se encuentra en la librería Math y lo estamos almacenando en una constante para hacernos la vida más fácil evitando tener que llamar a la librería Math cada vez que queramos acceder al valor de Pi.
+                </p>
+            </div>
+        <div class="calculadora_figura">
+            <h2>
+                Calculadora de area y perimetro de un circulo
+            </h2>
+            <form action="">
+                <label for="radio">Ingrese el radio del circulo:</label>
+                <input type="number" id="radio">
+                <button type="button" class="main_button" onclick="calcularMedidasCirculo()">Calcular</button>
+                <p id="circulo_resultados" class="figura_resultados"></p>
+            </form>
+        </div>
+        </div>
+        
     </section>  
 </main>
     

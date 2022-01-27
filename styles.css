@@ -59,6 +59,7 @@ header .logo-JS{
 .medidas_figura{
     border: 1px solid var(--javascript-black);
     width: 95%;
+    margin-top: 10px ;
     padding: 14px;
     
     
@@ -89,7 +90,7 @@ header .logo-JS{
     margin: 20px;
 }
 
-.medidas_figura .calculadora_figura form .calcular-cuadrado{
+.medidas_figura .calculadora_figura form button{
     margin-top: 10px;  
 }
 
